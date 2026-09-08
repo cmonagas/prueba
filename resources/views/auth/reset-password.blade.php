@@ -1,39 +1,47 @@
-<x-guest-layout>
-    <form method="POST" action="{{ route('password.store') }}">
-        @csrf
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nueva Clave - Ventas</title>
+    <link rel="stylesheet" href="{{ asset('css/estilos.css') }}"/>
+</head>
+<body>
 
-        <!-- Password Reset Token -->
-        <input type="hidden" name="token" value="{{ $request->route('token') }}">
-
-        <!-- Email Address -->
-        <div>
-            <x-input-label for="email" :value="__('Email')" />
-            <x-text-input id="email" class="block mt-1 w-full" type="email" name="email" :value="old('email', $request->email)" required autofocus autocomplete="username" />
-            <x-input-error :messages="$errors->get('email')" class="mt-2" />
+<main>
+    <div class="formulario">
+        <div class="logotipo">
+            <img src="{{ asset('img/logo.png') }}" alt="Logo Cesar Monagas"/>
         </div>
+        
+        <p>Ingresa tu Nueva Clave</p>
 
-        <!-- Password -->
-        <div class="mt-4">
-            <x-input-label for="password" :value="__('Password')" />
-            <x-text-input id="password" class="block mt-1 w-full" type="password" name="password" required autocomplete="new-password" />
-            <x-input-error :messages="$errors->get('password')" class="mt-2" />
-        </div>
+        @if ($errors->any())
+            <div style="color: #ffcccc; margin-bottom: 10px; font-size: 13px; text-align: left;">
+                <ul>
+                    @foreach ($errors->all() as $error)
+                        <li>• {{ $error }}</li>
+                    @endforeach
+                </ul>
+            </div>
+        @endif
 
-        <!-- Confirm Password -->
-        <div class="mt-4">
-            <x-input-label for="password_confirmation" :value="__('Confirm Password')" />
+        <form method="POST" action="{{ route('password.store') }}">
+            @csrf
 
-            <x-text-input id="password_confirmation" class="block mt-1 w-full"
-                                type="password"
-                                name="password_confirmation" required autocomplete="new-password" />
+            <!-- Token obligatorio enviado en la URL por el correo -->
+            <input type="hidden" name="token" value="{{ $request->route('token') }}">
 
-            <x-input-error :messages="$errors->get('password_confirmation')" class="mt-2" />
-        </div>
+            <input type="email" name="email" placeholder="Correo Electrónico" value="{{ old('email', $request->email) }}" required autofocus autocomplete="username"/>
+            
+            <input type="password" name="password" placeholder="Nueva Clave" required autocomplete="new-password"/>
+            
+            <input type="password" name="password_confirmation" placeholder="Confirmar Nueva Clave" required autocomplete="new-password"/>
+            
+            <input type="submit" name="btn" value="Guardar Nueva Clave"/>
+        </form>
+    </div>
+</main>
 
-        <div class="flex items-center justify-end mt-4">
-            <x-primary-button>
-                {{ __('Reset Password') }}
-            </x-primary-button>
-        </div>
-    </form>
-</x-guest-layout>
+</body>
+</html>
