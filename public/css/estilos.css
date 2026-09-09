@@ -1,0 +1,226 @@
+/* ==========================================================
+   RESET GLOBAL: Limpia márgenes y rellenos por defecto
+   ========================================================== */
+* {
+    /* 1. Posicionamiento */
+    margin: 0px;
+    
+    /* 2. Modelo de caja */
+    padding: 0px;
+}
+
+/* ==========================================================
+   BODY: Cuerpo del documento principal de la página
+   ========================================================== */
+body {
+    /* 1. Posicionamiento */
+    display: flex;
+    justify-content: center; /* Centra horizontalmente */
+    align-items: center;     /* Centra verticalmente */
+    margin: 0;
+
+    /* 2. Modelo de caja */
+    height: 100vh;           /* Altura del 100% del viewport */
+
+    /* 3. Fondo */
+    background: white;
+
+    /* 4. Tipografía */
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+/* ==========================================================
+   LOGOTIPO: Contenedor principal de la imagen del logo
+   ========================================================== */
+.logotipo {
+    /* 1. Posicionamiento */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 0px;
+
+    /* 2. Modelo de caja */
+    height: 190px;
+    padding: 0px;
+    border: 0px;
+
+    /* 3. Fondo */
+    background-color: #4682B4;
+}
+
+/* ==========================================================
+   IMAGEN DEL LOGOTIPO: Ajuste gráfico dentro de su contenedor
+   ========================================================== */
+.logotipo img {
+    /* 1. Posicionamiento */
+    /* (Sin reglas específicas de posicionamiento o márgenes) */
+
+    /* 2. Modelo de caja */
+    width: 270px;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 30%;
+
+    /* 3. Fondo */
+    /* (Al ser una imagen transparente PNG, no requiere fondo) */
+
+    /* 4. Tipografía */
+    /* (No aplica) */
+}
+
+/* ==========================================================
+   FORMULARIO: Contenedor principal del formulario de login
+   ========================================================== */
+.formulario {
+    /* 1. Posicionamiento */
+    /* (Posicionamiento heredado por el flujo normal de Flexbox en body) */
+
+    /* 2. Modelo de caja */
+    width: 100%;
+    max-width: 400px;
+    padding: 30px 40px;
+    border-radius: 10px;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+
+    /* 3. Fondo */
+    background-color: #4682B4;
+
+    /* 4. Tipografía */
+    text-align: center;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+/* ==========================================================
+   CAMPOS DE TEXTO Y CONTRASEÑA (INPUTS)
+   ========================================================== */
+input[type="text"],
+input[type="password"] {
+    /* 1. Posicionamiento */
+    margin: 10px 0;
+
+    /* 2. Modelo de caja */
+    width: 100%;
+    padding: 12px;
+    border: 1px solid #ccc;
+    border-radius: 6px;
+    box-sizing: border-box; /* Incluye padding/borde dentro del ancho */
+
+    /* 3. Fondo */
+    /* (Fondo por defecto del navegador) */
+
+    /* 4. Tipografía */
+    font-size: 16px;
+}
+
+/* ==========================================================
+   BOTONES DE ENVÍO (INGRESAR Y CREAR CUENTA)
+   ========================================================== */
+input[type="submit"] {
+    /* 1. Posicionamiento */
+    margin: 10px 0;
+    cursor: pointer;
+
+    /* 2. Modelo de caja */
+    width: 100%;
+    padding: 12px;
+    border: none;
+    border-radius: 6px;
+    box-sizing: border-box;
+    transition: background-color 0.3s ease;
+
+    /* 3. Fondo */
+    background-color: #2F5597;
+
+    /* 4. Tipografía */
+    color: white;
+    font-size: 16px;
+}
+
+/* EFECTO HOVER: Cambia el diseño al pasar el mouse por encima */
+input[type="submit"]:hover,
+input[type="button"]:hover {
+    background-color: #87CEEB;
+}
+
+
+/* ==========================================================
+   FOOTER: Pie de página del contenedor
+   ========================================================== */
+footer {
+    /* 1. Posicionamiento */
+    margin-top: 20px;
+
+    /* 2. Modelo de caja */
+    /* (Sin reglas de caja adicionales) */
+
+    /* 3. Fondo */
+    /* (Transparente por defecto) */
+
+    /* 4. Tipografía */
+    /* (Hereda estilos tipográficos) */
+}
+
+/* ==========================================================
+   ENLACES (ELEMENTOS A)
+   ========================================================== */
+a {
+    /* 1. Posicionamiento */
+    /* (Sin reglas) */
+
+    /* 2. Modelo de caja */
+    /* (Sin reglas) */
+
+    /* 3. Fondo */
+    /* (Sin reglas) */
+
+    /* 4. Tipografía */
+    color: white;
+}
+
+/* ==========================================================
+   PÁRRAFOS (ETIQUETAS P)
+   ========================================================== */
+p {
+    /* 1. Posicionamiento */
+    /* (Sin reglas) */
+
+    /* 2. Modelo de caja */
+    /* (Sin reglas) */
+
+    /* 3. Fondo */
+    /* (Sin reglas) */
+
+    /* 4. Tipografía */
+    font-size: 25px;
+    color: white;
+}
+
+/* 1. Agregar input[type="email"] a la regla de los campos de texto */
+input[type="text"],
+input[type="email"],
+input[type="password"] {
+    margin: 10px 0;
+    width: 100%;
+    padding: 12px;
+    border: 1px solid #ccc;
+    border-radius: 6px;
+    box-sizing: border-box;
+    font-size: 16px;
+}
+
+/* 2. Agregar input[type="button"] a la regla de los botones */
+input[type="submit"],
+input[type="button"] {
+    margin: 10px 0;
+    cursor: pointer;
+    width: 100%;
+    padding: 12px;
+    border: none;
+    border-radius: 6px;
+    box-sizing: border-box;
+    transition: background-color 0.3s ease;
+    background-color: #2F5597;
+    color: white;
+    font-size: 16px;
+}
+
